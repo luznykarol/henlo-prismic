@@ -1,0 +1,143 @@
+body,
+button,
+input,
+select,
+textarea {
+  @apply text-base;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.title-1,
+.title-2,
+.title-3,
+.title-4,
+.title-5,
+.title-6 {
+  clear: both;
+  @apply font-semibold mb-4 text-black;
+  line-height: 1.2em;
+}
+
+h1,
+.title-1 {
+  @apply text-h3 mb-6;
+  @screen md {
+    @apply text-h2 mb-8;
+  }
+}
+
+h2,
+.title-2 {
+  @apply text-h2 mb-6;
+  @screen md {
+    @apply text-h1 mb-8;
+  }
+}
+
+h3,
+.title-3,
+blockquote {
+  @apply text-h4 mb-4;
+  @screen md {
+    @apply text-h3 mb-4;
+  }
+}
+
+h4,
+.title-4 {
+  @apply text-h5 mb-3;
+  @screen md {
+    @apply text-h4 mb-4;
+  }
+}
+
+h5,
+.title-5 {
+  @apply text-lg;
+  @screen md {
+    @apply text-lg;
+  }
+}
+
+h6,
+.title-6 {
+  @apply text-lg;
+  @screen md {
+    @apply text-h6;
+  }
+}
+
+ul {
+  list-style: none;
+  margin-left: 0;
+  li {
+    @apply relative mb-2;
+    padding-left: 20px;
+    &::before {
+      content: '';
+      @apply block bg-blue absolute;
+      width: 6px;
+      height: 6px;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+p {
+  @apply text-grey font-normal font-sans leading-loose text-sm;
+
+  @screen sm {
+    @apply text-base;
+  }
+}
+
+.markdown-body {
+  h1,
+  h2,
+  h3 {
+    @apply mb-6 mt-10;
+  }
+
+  h1 {
+    @extend .title-2;
+  }
+  h2 {
+    @extend .title-3;
+  }
+  h3 {
+    @extend .title-4;
+  }
+  h4 {
+    @extend .title-5;
+  }
+
+  h5 {
+    @extend .title-6;
+  }
+
+  p,
+  li {
+    @apply text-lg text-black;
+    line-height: 1.825em;
+  }
+
+  p img {
+    @apply mt-12 mb-6 mx-auto;
+  }
+
+  p,
+  ul,
+  ol {
+    @apply mb-6;
+  }
+
+  ul li::before {
+    top: 12px;
+  }
+}

@@ -1,0 +1,25 @@
+html {
+  @apply text-base text-grey font-sans;
+}
+
+body {
+  @apply bg-white text-base;
+}
+
+button:active {
+  @apply outline-none;
+}
+
+.page-content {
+  min-height: calc(100vh - 120px - 105px);
+}
+
+button {
+  outline: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}

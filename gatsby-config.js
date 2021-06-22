@@ -1,12 +1,33 @@
+const tailwind = require('tailwindcss')
+const path = require('path')
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: 'Henlo Prismic',
+    separator: '|',
+    baseTitle: 'Henlo Prismic',
+    author: `@cleancommit`,
+    lang: 'en',
+    siteUrl: `https://cleancommit.io`,
+    // image: '/img/hero.jpg',
+    // themeColor: '#EFE5DA',
+    // keyword: 'food, local business, events, narooma, local food, salt',
+    // description:
+    //   'A locally sourced and supported business that evolves with the community.',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    'gatsby-plugin-preload-fonts',
     `gatsby-plugin-image`,
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        postCssPlugins: [
+          tailwind,
+          require('./tailwind.config.js'), // Optional: Load custom Tailwind CSS configuration
+        ],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -16,6 +37,15 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: 'gatsby-plugin-root-import',
+      options: {
+        '@': path.join(__dirname, 'src'),
+        '~': path.join(__dirname),
+        styles: path.join(__dirname, 'src/styles'),
+        img: path.join(__dirname, 'static/img'),
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

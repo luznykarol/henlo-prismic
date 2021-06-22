@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+
+@import 'base/fonts';
+@import 'base/global';
+@import 'base/typography';
+@import 'base/helpers';
+
+@tailwind utilities;
