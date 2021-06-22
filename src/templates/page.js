@@ -4,7 +4,8 @@ import Layout from '@/components/Layout'
 import Seo from '@/components/seo'
 import SliceZone from '@/components/SliceZone'
 
-const IndexPage = ({ data }) => {
+const Page = ({ data }) => {
+  if (!data) return null
   const document = data.prismicPage.data
 
   const seo = {
@@ -12,7 +13,6 @@ const IndexPage = ({ data }) => {
     description: document.description,
     image: document.image.url,
   }
-
   return (
     <Layout>
       <SEO data={seo} />
@@ -21,13 +21,13 @@ const IndexPage = ({ data }) => {
   )
 }
 
-export default IndexPage
-
 export const query = graphql`
-  query HomePageQuery {
-    prismicPage(uid: { eq: "home" }) {
+  query PageQuery($uid: String) {
+    prismicPage(uid: { eq: $uid }) {
       uid
       ...PrismicSlices
     }
   }
 `
+
+export default Page

@@ -1,0 +1,50 @@
+{
+  "Main": {
+    "body": {
+      "type": "Slices",
+      "fieldset": "Slice zone",
+      "config": {
+        "labels": {
+          "navigation": []
+        },
+        "choices": {
+          "navigation": {
+            "type": "Slice",
+            "fieldset": "Navigation",
+            "description": "Footer Navigation",
+            "icon": "clear_all",
+            "display": "list",
+            "non-repeat": {
+              "title": {
+                "type": "Text",
+                "config": {
+                  "label": "Title"
+                }
+              }
+            },
+            "repeat": {
+              "name": {
+                "type": "Text",
+                "config": {
+                  "label": "Name"
+                }
+              },
+              "link": {
+                "type": "Link",
+                "config": {
+                  "label": "Link"
+                }
+              },
+              "alt_link": {
+                "type": "Text",
+                "config": {
+                  "label": "Alt Link"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -9,11 +9,7 @@ module.exports = {
     author: `@cleancommit`,
     lang: 'en',
     siteUrl: `https://cleancommit.io`,
-    // image: '/img/hero.jpg',
-    // themeColor: '#EFE5DA',
-    // keyword: 'food, local business, events, narooma, local food, salt',
-    // description:
-    //   'A locally sourced and supported business that evolves with the community.',
+    themeColor: '#EFE5DA',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -33,6 +29,18 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-prismic',
+      options: {
+        repositoryName: 'henloprismic',
+        schemas: {
+          page: require('./custom_types/page.json'),
+          blog_post: require('./custom_types/blog_post.json'),
+          header_navigation: require('./custom_types/header_navigation.json'),
+          footer_navigation: require('./custom_types/footer_navigation.json'),
+        },
       },
     },
     `gatsby-transformer-sharp`,

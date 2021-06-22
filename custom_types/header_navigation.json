@@ -1,0 +1,37 @@
+{
+  "Main": {
+    "items": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "scroll": {
+            "type": "Boolean",
+            "config": {
+              "default_value": false,
+              "label": "Scroll"
+            }
+          },
+          "name": {
+            "type": "Text",
+            "config": {
+              "label": "Name"
+            }
+          },
+          "link": {
+            "type": "Link",
+            "config": {
+              "label": "Link"
+            }
+          },
+          "alt_link": {
+            "type": "Text",
+            "config": {
+              "label": "Alt Link"
+            }
+          }
+        },
+        "label": "items"
+      }
+    }
+  }
+}
